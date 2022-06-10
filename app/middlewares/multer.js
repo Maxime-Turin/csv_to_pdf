@@ -1,11 +1,12 @@
 //Middleware to setup multer
-
+const path = require('path')
 const multer = require('multer')
 
 // On définie la destination de l'upload et le nom du fichier
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '../uploads')
+    //! Multer n'aime pas les chemins sans path
+    cb(null, path.join(__dirname, '../../public/uploads'))
   },
   filename: (req, file, cb) => {
     const name = file.originalname.split(' ').join('_');

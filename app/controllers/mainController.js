@@ -9,6 +9,7 @@ const mainController = {
   
   sendFile: (req, res) => {
     console.log(req.file);
+    console.log(req.body);
     res.send('complete');
   }
 };

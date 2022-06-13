@@ -9,9 +9,9 @@ const storage = multer.diskStorage({
     cb(null, path.join(__dirname, '../../public/uploads'))
   },
   filename: (req, file, cb) => {
-    const name = file.originalname.split(' ').join('_');
-    const extension = '.jpg';
-    cb(null, name + '_' + Date.now() + extension);
+    const name = 'annuaire';
+    const extension = '.csv';
+    cb(null, name + extension);
   }
 });
 
